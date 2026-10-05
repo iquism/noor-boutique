@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #b76e79;
+  color: #fffdf9;
+}
+
+/* thin elegant scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #fbf7f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #d9be8c;
+  border-radius: 8px;
+  border: 2px solid #fbf7f1;
+}
+
+/* slow ken-burns for hero */
+@keyframes heroDrift {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.08) translateY(-1.5%);
+  }
+}
+.animate-hero-drift {
+  animation: heroDrift 18s ease-in-out infinite alternate;
+}
+
+/* gentle marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
